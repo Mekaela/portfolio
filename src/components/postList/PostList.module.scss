@@ -1,26 +1,29 @@
 .post {
-    max-width: 70%;
+    max-width: 1180px;
     text-align: left;
-    margin: 20px auto;
-    background-color: rgb(188, 207, 209);
-    padding: 10px;
-    border-radius: 2px;
-    font-family: serif;
+    margin: 16px auto;
+    background-color: #eeece1;
+    padding: 20px 24px;
+    border: 1px solid #dedccf;
+    border-radius: 3px;
+    font-family: Georgia, "Times New Roman", serif;
+    transition: background-color 160ms ease;
     &:hover {
-        background-color: rgb(157, 193, 198);
+        background-color: #e7e5d8;
     }
     &__container {
         min-height: 55vh;
+        padding: 0 32px 50px;
     }
     &__date {
         margin: 0px;
         font-size: 70%;
+        color: #777a67;
     }
     &__title {
-        // color: #12749C;
         font-weight: normal;
-        margin: 0px;
-        color: rgb(0, 90, 94);
+        margin: 5px 0;
+        color: #294733;
 
     }
     &__byline {
@@ -30,6 +33,16 @@
     }
     &__link {
         text-decoration: none;
-        color: black;
+        color: #61675c;
+    }
+}
+
+@media (max-width: 700px) {
+    .post {
+        padding: 16px;
+
+        &__container {
+            padding: 0 20px 40px;
+        }
     }
 }

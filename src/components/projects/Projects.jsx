@@ -1,64 +1,66 @@
 import React from "react";
 import styles from "./Projects.module.scss";
-import inventory from "../../images/inventory.png";
-import farm from "../../images/farm.png";
+import { useLanguage } from "../../i18n/LanguageContext";
+import corkOakDetection from "../../images/cork_oak_detection.png";
+import soc from "../../images/soc.png";
 import salesforce from "../../images/salesforce.png";
 
+const projects = [
+  {
+    number: "github.com/Mekaela/cork-oak-classification",
+    category: "projects.category1",
+    title: "projects.title1",
+    description: "projects.description1",
+    image: corkOakDetection,
+  },
+  {
+    number: "github.com/Mekaela/isa_soc_predictor",
+    category: "projects.category2",
+    title: "projects.title2",
+    description: "projects.description2",
+    image: soc,
+  },
+  // {
+  //   number: "03",
+  //   category: "projects.category3",
+  //   title: "projects.title3",
+  //   description: "projects.description3",
+  //   image: salesforce,
+  // },
+];
+
+const ProjectVisual = ({ image }) => (
+  <div className={styles.projects__visual}>
+    <img className={styles.projects__image} src={image} alt="" />
+  </div>
+);
+
 const Projects = () => {
+  const { t } = useLanguage();
+
   return (
-    <div className={styles.projects}>
-      <h1 className={styles.projects__title}>
-        Experience <br /> &amp; Projects:
-      </h1>
-      <div className={styles.projects__card}>
-        <a href="https://www.lendi.com">
-          <img
-            className={styles.projects__img}
-            src={salesforce}
-            alt="Sample Salesforce UI "
-          />
-        </a>
-        <h2 className={styles.projects__text}>Lendi</h2>
-        <h3 className={styles.projects__text}>
-          Legacy and Greenfield Salesforce instances
-        </h3>
-        <p className={styles.projects__text}>
-          I worked as a Salesforce Developer with Lendi for 18 months. The
-          technologies I used were: LWC - Javascript, APEX, Visualforce,
-          Triggers, Configuration; Kafka: JSON. I was using git daily and worked
-          in an agile team.
-        </p>
+    <section className={styles.projects} id="work">
+      <div className={styles.projects__heading}>
+        <div>
+          <p className={styles.projects__eyebrow}>{t("projects.eyebrow")}</p>
+          <h2>{t("projects.title")}</h2>
+        </div>
       </div>
-      <div className={styles.projects__card}>
-        {/* <a href="https://www.mothdx.com"> */}
-        <img
-          className={styles.projects__img}
-          src={inventory}
-          alt="UI for a chemical inventory system. Has 6 columns of name, id etc. "
-        />
-        {/* </a> */}
-        <h2 className={styles.projects__text}>Moth Diagnostics</h2>
-        <h3 className={styles.projects__text}>Chemical inventory software</h3>
-        <p className={styles.projects__text}>
-          A joint project with a team of 12 trainee developers to build a
-          chemical inventory system in Java and React. My role was mainly
-          building containers and components in React, as well as
-          troubleshooting and joining tables in Java, including Spring Boot. I
-          also used MySQL for the database.
-        </p>
+      <div className={styles.projects__grid}>
+        {projects.map((project) => (
+          <article className={styles.projects__card} key={project.number}>
+            <ProjectVisual image={project.image} />
+            <div className={styles.projects__meta}>
+              <span> {project.number}</span>
+              <span>{t(project.category)}</span>
+            </div>
+            <h3>{t(project.title)}</h3>
+            <p>{t(project.description)}</p>
+          </article>
+        ))}
       </div>
-      <div className={styles.projects__card}>
-        <a href="https://github.com/Mekaela/ecommerce-farm">
-          <img className={styles.projects__img} src={farm} alt="app UI" />
-        </a>
-        <h2 className={styles.projects__text}>Farm website</h2>
-        <h3 className={styles.projects__text}>Farm eCommerce website</h3>
-        <p className={styles.projects__text}>
-          This site was built in React and used Firebase for the database. It
-          allows customers to browse options and add them to their cart.
-        </p>
-      </div>
-    </div>
+    </section>
   );
 };
+
 export default Projects;

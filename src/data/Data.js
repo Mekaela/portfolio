@@ -28,10 +28,8 @@ export const getPost = async (id) => {
   return { id: docSnap.id, ...docSnap.data() };
 };
 
-
-
 export const getImage = async (location) => {
   const storage = getStorage();
   const ImageURL = await getDownloadURL(ref(storage, location));
   return ImageURL;
-}
+};

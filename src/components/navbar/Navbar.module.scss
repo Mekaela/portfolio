@@ -1,26 +1,121 @@
- 
- .nav{
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    position: fixed;
-    background-color: rgba(2, 135, 139, 0.7);
-    height: 35px;
+.nav {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  width: min(1180px, calc(100% - 64px));
+  margin: 0 auto;
+  padding: 27px 0;
+  border-bottom: 1px solid rgba(38, 59, 43, 0.16);
+
+  &__brand {
+    display: inline-flex;
     align-items: center;
-    top: 0;
-    padding: 10px 0px;
-    &__item {
-        font-size: 1.9em;
-        color: rgb(199, 199, 199);
-        font-weight: bold;
-        padding-right:3%;
-        text-decoration: none; 
-        &_link {
-            color: rgb(199, 199, 199);
-            text-decoration: none;
-            &:hover {
-                color: black;
-            }
-        }
+    gap: 11px;
+    color: #233b2b;
+    text-decoration: none;
+
+    strong,
+    small {
+      display: block;
     }
- }
+
+    strong {
+      font-size: 0.9rem;
+      letter-spacing: -0.02em;
+    }
+
+    small {
+      margin-top: 3px;
+      color: #72796b;
+      font-size: 0.67rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+  }
+
+  &__mark {
+    display: grid;
+    width: 39px;
+    height: 39px;
+    place-items: center;
+    border-radius: 50%;
+    background: #294733;
+    color: #f3efe3;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.8rem;
+    font-style: italic;
+    line-height: 1;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: clamp(18px, 3vw, 42px);
+
+    a {
+      color: #4c5548;
+      font-size: 0.8rem;
+      text-decoration: none;
+      transition: color 160ms ease;
+
+      &:hover {
+        color: #a0643d;
+      }
+    }
+  }
+
+  &__language {
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    border: 1px solid #d5d8c8;
+    border-radius: 3px;
+
+    button {
+      min-width: 34px;
+      padding: 7px 6px;
+      border: 0;
+      border-radius: 2px;
+      background: transparent;
+      color: #596250;
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.67rem;
+      letter-spacing: 0.06em;
+
+      &:hover {
+        color: #9c603e;
+      }
+    }
+
+    .nav__language_active {
+      background: #294733;
+      color: #f7f5ec;
+    }
+  }
+
+}
+
+@media (max-width: 700px) {
+  .nav {
+    flex-wrap: wrap;
+    width: calc(100% - 40px);
+    gap: 16px;
+    padding: 19px 0;
+
+    &__links {
+      order: 3;
+      width: 100%;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    &__language button {
+      min-width: 29px;
+      padding: 6px 4px;
+    }
+  }
+}

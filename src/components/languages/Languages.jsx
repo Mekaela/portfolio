@@ -1,93 +1,51 @@
 import React from "react";
 import styles from "./Languages.module.scss";
-import { faCode } from "@fortawesome/free-solid-svg-icons";
-import {
-  faJs,
-  faReact,
-  faJava,
-  faGitAlt,
-  faGripfire,
-  faPython,
-  faSalesforce,
-} from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useLanguage } from "../../i18n/LanguageContext";
+
+const capabilities = [
+  {
+    number: "01",
+    title: "capabilities.title1",
+    description: "capabilities.description1",
+  },
+  {
+    number: "02",
+    title: "capabilities.title2",
+    description: "capabilities.description2",
+  },
+  {
+    number: "03",
+    title: "capabilities.title3",
+    description: "capabilities.description3",
+  },
+];
 
 const Languages = () => {
-  const languageList = [
-    {
-      name: "Apex",
-      img: faSalesforce,
-      description:
-        "Used while working at Lendi as a Salesforce Software Engineer. About 90% of my coding was using Apex",
-    },
-    {
-      name: "Java and Spring",
-      img: faJava,
-      description:
-        "Main language and framework I used during Nology software engineering course for learning and projects.",
-    },
-    {
-      name: "Javascript",
-      img: faJs,
-      description:
-        "Used for LWCs as a Salesforce Software Engineer at Lendi, as well as during the Nology course, and projects, like this portfolio.",
-    },
-    {
-      name: "React",
-      img: faReact,
-      description:
-        "Used for this portfolio, and projects and learning during Nology Software Engineering course.",
-    },
-    {
-      name: "Python",
-      img: faPython,
-      description:
-        "Used for many online courses including Machine Learning with Python and many other online courses.",
-    },
-    {
-      name: "Firebase",
-      img: faGripfire,
-      description:
-        "Used during one of my projects during nology software engineering course.",
-    },
-    {
-      name: "MySQL",
-      img: faCode,
-      description:
-        "Used during the portfolio project with nology, and for a personal project.",
-    },
-    {
-      name: "Git",
-      img: faGitAlt,
-      description: "Used daily at Lendi, and for personal projects.",
-    },
-    {
-      name: "and...",
-      img: null,
-      description:
-        "I have also touched on Sass and Bootstrap while building websites, and R during online courses.",
-    },
-  ];
+  const { t } = useLanguage();
 
   return (
-    <div className={styles.languages}>
-      <h1 className={styles.languages__title}>Skills:</h1>
-      <div className={styles.languages__list}>
-        {languageList.map((language) => (
-          <div key={language.name} className={styles.languages__list__item}>
-            <FontAwesomeIcon icon={language.img} size="2x" />
+    <section className={styles.capabilities} id="approach">
+      <div className={styles.capabilities__intro}>
+        <p className={styles.capabilities__eyebrow}>{t("capabilities.eyebrow")}</p>
+        <h2>{t("capabilities.title")}</h2>
+        <p className={styles.capabilities__summary}>{t("capabilities.summary")}</p>
+      </div>
+      <div className={styles.capabilities__list}>
+        {capabilities.map((capability) => (
+          <article className={styles.capabilities__item} key={capability.number}>
+            <span className={styles.capabilities__number}>{capability.number}</span>
             <div>
-              <p className={styles.languages__list__item_name}>
-                {language.name}
-              </p>
-              <p className={styles.languages__list__item_desc}>
-                {language.description}
-              </p>
+              <h3>{t(capability.title)}</h3>
+              <p>{t(capability.description)}</p>
             </div>
-          </div>
+            <span className={styles.capabilities__arrow} aria-hidden="true">
+              ↗
+            </span>
+          </article>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
+
 export default Languages;

@@ -1,16 +1,15 @@
 import React from "react";
 import styles from "./BlogIntro.module.scss";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 const BlogIntro = () => {
+  const { t } = useLanguage();
+
   return (
     <div className={styles.blog}>
-      <h1 className={styles.blog__title}>Data Science Blog</h1>
-      <h5 className={styles.blog__subtitle}>Mekaela Stevenson</h5>
-      <p className={styles.blog__intro}>
-        Welcome to my blog. This blog is both for me to solidify my learnings
-        and to look at some data science techniques and delve into industry
-        trends and new technologies.
-      </p>
+      <h1 className={styles.blog__title}>{t("blog.title")}</h1>
+      <h5 className={styles.blog__subtitle}>{t("blog.author")}</h5>
+      <p className={styles.blog__intro}>{t("blog.description")}</p>
     </div>
   );
 };
