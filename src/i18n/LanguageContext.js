@@ -11,6 +11,7 @@ const translations = {
     "nav.english": "English",
     "nav.portuguese": "Portuguese",
     "hero.role": "Agriculture and Forestry Data Scientist",
+    "hero.imageCaption": "Cork oak tree crown detection with YOLOv8",
     "hero.description":
       "I am a data scientist specialising in agricultural and forestry data. I hold a Masters of Green Data Science from the School of Agronomy at the University of Lisbon, and I have experience with implementation of data management systems, data migrations, computer vision, machine learning, and GIS.\n\n I was previously a software developer and business analyst, and so have worked with the full software development lifecycle, including data migrations and code deployment.",
     "hero.artLabel": "Illustration of connected agricultural field data",
@@ -93,6 +94,7 @@ const translations = {
     "nav.english": "Inglês",
     "nav.portuguese": "Português",
     "hero.role": "Cientista de dados para a agricultura e a floresta",
+    "hero.imageCaption": "Deteção de copas de sobreiro com YOLOv8",
     "hero.description":
       "Sou cientista de dados, especializada em dados agrícolas e florestais. Tenho um mestrado em Ciência de Dados Verdes pelo Instituto Superior de Agronomia da Universidade de Lisboa e experiência na implementação de sistemas de gestão de dados, migração de dados, visão por computador, aprendizagem automática e SIG. Ajudo agricultores e profissionais do setor florestal a tomar melhores decisões e a reduzir o trabalho manual necessário para recolher e processar dados.\n\nGosto de transformar dados complexos em ferramentas práticas e análises claras que apoiam decisões sustentáveis na agricultura e na floresta.",
     "hero.artLabel": "Ilustração de dados agrícolas ligados ao terreno",
