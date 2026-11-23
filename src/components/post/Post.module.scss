@@ -6,28 +6,42 @@
   font-family: sans-serif;
   margin: 0 auto;
   max-width: 800px;
-  &__coverImg {
-    width: 400px;
-    max-width: 70%;
-    margin: auto;
-  }
   &__title {
     margin-bottom: 0px;
-    display: flex;
-    margin: auto;
     color: #243b2c;
     font-family: Georgia, "Times New Roman", serif;
   }
   &__author {
     font-size: small;
-    margin: auto;
+    color: #61675c;
   }
   &__body {
     font-size: 110%;
     margin: 10px 5px;
-    max-width: 800px;
-    // width: 100%;
-    // margin: auto;
+    line-height: 1.7;
+
+    h2,
+    h3 {
+      color: #243b2c;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.3;
+    }
+
+    img {
+      display: block;
+      height: auto;
+      max-width: 100%;
+    }
+
+    figure {
+      margin: 24px 0;
+    }
+
+    figcaption {
+      color: #61675c;
+      font-size: 85%;
+      margin-top: 8px;
+    }
   }
   &__date {
     font-size: x-small;

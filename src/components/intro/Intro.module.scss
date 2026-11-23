@@ -49,6 +49,14 @@
     color: #61675c;
     font-size: 1rem;
     line-height: 1.8;
+
+    p {
+      margin: 0;
+    }
+
+    p + p {
+      margin-top: 1em;
+    }
   }
 
   &__actions {

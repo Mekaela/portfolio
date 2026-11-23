@@ -12,7 +12,13 @@ const Intro = () => {
         <p className={styles.hero__eyebrow}>
           <span /> {t("hero.role")}
         </p>
-        <p className={styles.hero__description}>{t("hero.description")}</p>
+        <div className={styles.hero__description}>
+          {t("hero.description")
+            .split("\n\n")
+            .map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+        </div>
       </div>
 
       {/* <div className={styles.hero__art} aria-label={t("hero.artLabel")}>

@@ -2,7 +2,7 @@ import React, { createContext, useContext, useEffect, useMemo, useState } from "
 
 const translations = {
   en: {
-    "nav.tagline": "Agricultural data science",
+    "nav.tagline": "Data scientist",
     "nav.portfolio": "portfolio",
     "nav.blog": "blog",
     "nav.faq": "FAQ",
@@ -12,9 +12,7 @@ const translations = {
     "nav.portuguese": "Portuguese",
     "hero.role": "Agriculture and Forestry Data Scientist",
     "hero.description":
-      "I am a data scientist specialising in agricultural and forestry data. I hold a Masters of Green Data Science from the School of Agronomy at the University of Lisbon, and I have experience with implementation of data management systems, data migrations, computer vision, machine learning, and GIS. " 
-       +
-      "I help farmers and foresters to improve their decision making, and assist them to cut the manual labour required for data collection and processing.",
+      "I am a data scientist specialising in agricultural and forestry data. I hold a Masters of Green Data Science from the School of Agronomy at the University of Lisbon, and I have experience with implementation of data management systems, data migrations, computer vision, machine learning, and GIS.\n\n I was previously a software developer and business analyst, and so have worked with the full software development lifecycle, including data migrations and code deployment.",
     "hero.artLabel": "Illustration of connected agricultural field data",
     "hero.fieldNotes": "FIELD NOTES / 01",
     "hero.dataContext": "DATA IN CONTEXT",
@@ -37,10 +35,12 @@ const translations = {
     "projects.title2": "Carbon soil prediction and management tool for farmers",
     "projects.description2":
       "Applying Random Forest regression model to predict the soil organic carbon content of farms.",
+    "projects.experience":
+      "Before becoming a data scientist, I worked as a Salesforce software developer, and a business analyst across various CRM related projects. Most of my work has been with greenfield projects (i.e. new implementations), and I have experience with the full software lifecycle: from understanding customer needs and building data solutions, to building predictive models, supporting implementation, and helping users make practical decisions with their data.",
     "projects.category3": "Digital agriculture",
-    "projects.title3": "Add your project title",
+    "projects.title3": "Farm management system",
     "projects.description3":
-      "Highlight a project that brought people, processes, and technology together across the value chain.",
+      "A full-stack data collection tool built with Django and PostgreSQL. I designed and built the database schema, backend logic, and front end to support on-farm data acquisition.",
     "projects.nodeField": "LAND",
     "projects.nodeData": "DATA",
     "projects.nodePeople": "PEOPLE",
@@ -76,12 +76,12 @@ const translations = {
     "faq.question1": "What kind of work do I do?",
     "faq.answer1":
       "My work and education has given me experience of the full software cycle of defining customer needs, building software products, building machine learning models to predict, teaching users how to use their software, and supporting users with their implementations and ongoing use of software. I help organisations decide on data management strategies for operational data, and then build models to support decision making and reduce manual fieldwork for farmers, foresters and other related stakeholders.",
-    "faq.question2": "Why agriculture?",
+    "faq.question2": "What makes my background useful in this space?",
     "faq.answer2":
-      "I grew up on a small farm with horses, and occasionally other stock animals, and my family had cattle and sugarcane farms which I spent a lot of time at. I have always been close to agriculture. Once I started my professional work in IT I knew I wanted to combine it with agriculture and forestry to bring advancements in technology from other fields and academia to agriculture and forestry. ",
-    "faq.question3": "What makes my background useful in this space?",
-    "faq.answer3":
-      "I bring together technical skills in data analysis, software development, and stakeholder communication with a strong understanding of environmental and operational context. That means I can work with both technical teams and end users to turn fragmented data into useful, actionable insight.",
+        "I bring together technical skills in data analysis, software development, and stakeholder communication with a strong understanding of environmental and operational context. That means I can work with both technical teams and end users to turn fragmented data into useful, actionable insight.",
+    // "faq.question3": "Why agriculture?",
+    // "faq.answer3":
+    //     "I grew up on a small farm with horses, and occasionally other stock animals, and my family had cattle and sugarcane farms which I spent a lot of time at. I have always been close to agriculture. Once I started my professional work in IT I knew I wanted to combine it with agriculture and forestry to bring advancements in technology from other fields and academia to agriculture and forestry. ",
   },
   pt: {
     "nav.tagline": "Ciência de dados agrícolas",
@@ -94,7 +94,7 @@ const translations = {
     "nav.portuguese": "Português",
     "hero.role": "Cientista de dados para a agricultura e a floresta",
     "hero.description":
-      "Sou cientista de dados, especializada em dados agrícolas e florestais. Tenho um mestrado em Ciência de Dados Verdes pela Escola Superior de Agronomia da Universidade de Lisboa e experiência na implementação de sistemas de gestão de dados, migração de dados, visão por computador, aprendizagem automática e SIG. Ajudo agricultores e profissionais do setor florestal a tomar melhores decisões e a reduzir o trabalho manual necessário para recolher e processar dados.",
+      "Sou cientista de dados, especializada em dados agrícolas e florestais. Tenho um mestrado em Ciência de Dados Verdes pelo Instituto Superior de Agronomia da Universidade de Lisboa e experiência na implementação de sistemas de gestão de dados, migração de dados, visão por computador, aprendizagem automática e SIG. Ajudo agricultores e profissionais do setor florestal a tomar melhores decisões e a reduzir o trabalho manual necessário para recolher e processar dados.\n\nGosto de transformar dados complexos em ferramentas práticas e análises claras que apoiam decisões sustentáveis na agricultura e na floresta.",
     "hero.artLabel": "Ilustração de dados agrícolas ligados ao terreno",
     "hero.fieldNotes": "NOTAS DE CAMPO / 01",
     "hero.dataContext": "DADOS NO CONTEXTO",
@@ -118,10 +118,12 @@ const translations = {
       "Ferramenta de previsão e gestão do carbono no solo para agricultores",
     "projects.description2":
       "Aplicação de um modelo de regressão Random Forest para prever o teor de carbono orgânico do solo em explorações agrícolas.",
+    "projects.experience":
+      "Antes de me tornar cientista de dados, trabalhei como programadora Salesforce e analista de negócios em vários projetos relacionados com CRM. A maioria dos meus projetos envolveu novas implementações e tenho experiência em todo o ciclo de desenvolvimento de software: desde compreender as necessidades dos clientes e criar soluções de dados até desenvolver modelos preditivos, apoiar a implementação e ajudar os utilizadores a tomar decisões práticas com os seus dados.",
     "projects.category3": "Agricultura digital",
-    "projects.title3": "Adicione o título do projeto",
+    "projects.title3": "Sistema de gestão agrícola",
     "projects.description3":
-      "Destaque um projeto que conectou pessoas, processos e tecnologia ao longo da cadeia de valor.",
+      "Ferramenta de recolha de dados desenvolvida com Django e PostgreSQL. Concebi e desenvolvi o esquema da base de dados, a lógica de back-end e a interface para apoiar a recolha de dados na exploração agrícola.",
     "projects.nodeField": "CAMPO",
     "projects.nodeData": "DADOS",
     "projects.nodePeople": "PESSOAS",

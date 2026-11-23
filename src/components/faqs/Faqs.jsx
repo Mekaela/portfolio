@@ -4,7 +4,8 @@ import { useLanguage } from "../../i18n/LanguageContext";
 
 const Faqs = () => {
   const { t } = useLanguage();
-  const qAndAs = [1, 2, 3];
+  const qAndAs = [1, 2];
+  // const qAndAs = [1, 2, 3];
 
   return (
     <div className={styles.faqs}>

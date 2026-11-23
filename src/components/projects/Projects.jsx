@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "./Projects.module.scss";
 import { useLanguage } from "../../i18n/LanguageContext";
+import { Link } from "react-router-dom";
 import corkOakDetection from "../../images/cork_oak_detection.png";
 import soc from "../../images/soc.png";
-import salesforce from "../../images/salesforce.png";
+import antaia from "../../images/antaia.png";
 
 const projects = [
   {
@@ -12,6 +13,7 @@ const projects = [
     title: "projects.title1",
     description: "projects.description1",
     image: corkOakDetection,
+    postId: "cork-oak-classification",
   },
   {
     number: "github.com/Mekaela/isa_soc_predictor",
@@ -19,14 +21,16 @@ const projects = [
     title: "projects.title2",
     description: "projects.description2",
     image: soc,
+    postId: "soil-carbon-prediction",
   },
-  // {
-  //   number: "03",
-  //   category: "projects.category3",
-  //   title: "projects.title3",
-  //   description: "projects.description3",
-  //   image: salesforce,
-  // },
+  {
+    number: "private github",
+    category: "projects.category3",
+    title: "projects.title3",
+    description: "projects.description3",
+    image: antaia,
+    postId: "farm-management-system",
+  },
 ];
 
 const ProjectVisual = ({ image }) => (
@@ -48,17 +52,24 @@ const Projects = () => {
       </div>
       <div className={styles.projects__grid}>
         {projects.map((project) => (
-          <article className={styles.projects__card} key={project.number}>
-            <ProjectVisual image={project.image} />
-            <div className={styles.projects__meta}>
-              <span> {project.number}</span>
-              <span>{t(project.category)}</span>
-            </div>
-            <h3>{t(project.title)}</h3>
-            <p>{t(project.description)}</p>
-          </article>
+          <Link
+            className={styles.projects__link}
+            to={`/blog/${project.postId}`}
+            key={project.number}
+          >
+            <article className={styles.projects__card}>
+              <ProjectVisual image={project.image} />
+              <div className={styles.projects__meta}>
+                <span> {project.number}</span>
+                <span>{t(project.category)}</span>
+              </div>
+              <h3>{t(project.title)}</h3>
+              <p>{t(project.description)}</p>
+            </article>
+          </Link>
         ))}
       </div>
+      <p className={styles.projects__experience}>{t("projects.experience")}</p>
     </section>
   );
 };

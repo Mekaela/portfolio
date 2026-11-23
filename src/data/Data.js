@@ -1,35 +1,19 @@
-import { collection, query, getDocs, getDoc, doc } from "firebase/firestore";
-import { db } from "../firestore";
-import { getStorage, ref, getDownloadURL } from "firebase/storage";
+import postFiles from "./posts";
 
-export const getPosts = async () => {
-  const blogs = query(collection(db, "post"));
-  const querySnapshot = await getDocs(blogs);
-  const posts = [];
-  querySnapshot.forEach((post) => {
-    // doc.data() is never undefined for query doc snapshots
-    console.log(post.id, " => ", post.data());
-    posts.push({
-      id: post.id,
-      ...post.data(),
-    });
-  });
+const translationsById = postFiles.reduce((posts, post) => {
+  posts[post.id] = {
+    ...posts[post.id],
+    [post.language]: post,
+  };
   return posts;
-};
+}, {});
 
-export const getPost = async (id) => {
-  const docRef = doc(db, "post", id);
-  const docSnap = await getDoc(docRef);
+const posts = Object.entries(translationsById).map(([id, translations]) => ({
+  ...translations.en,
+  id,
+  translations,
+}));
 
-  if (!docSnap.exists) {
-    return;
-  }
+export const getPosts = () => posts;
 
-  return { id: docSnap.id, ...docSnap.data() };
-};
-
-export const getImage = async (location) => {
-  const storage = getStorage();
-  const ImageURL = await getDownloadURL(ref(storage, location));
-  return ImageURL;
-};
+export const getPost = (id) => posts.find((post) => post.id === id);
